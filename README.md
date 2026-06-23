@@ -1,4 +1,4 @@
-# <img src="components/imgg/whitelogo.png" alt="Job Crafting Logo" width="55" align="center"/> Job Crafting
+# Job Crafting <img src="components/imgg/whitelogo.png" alt="Job Crafting Logo" width="55" align="center"/> 
 
 <p align="left">
   <strong>Finding the Best Job for your Profile Using the JobCrafting Theory </strong>
