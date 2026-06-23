@@ -1,7 +1,7 @@
 # <img src="components/imgg/whitelogo.png" alt="Job Crafting Logo" width="55" align="center"/> Job Crafting
 
 <p align="left">
-  <strong>AI-Powered Career Alignment Platform</strong>
+  <strong>Finding the Best Job for your Profile Using the JobCrafting Theory </strong>
 </p>
 
 <p align="left">
