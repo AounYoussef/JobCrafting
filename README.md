@@ -1,20 +1,37 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🧩 Job Crafting
 
-# Run and deploy your AI Studio app
+> Imagine waking up tomorrow excited to go to work. Not because you have to — but because everything about it was made for you. Your role matches your skills. Your company matches your values. Your team matches your energy.
+>
+> **That world exists. We're building it. One perfect match at a time.**
 
-This contains everything you need to run your app locally.
+Job Crafting is an AI-powered platform built on organizational psychology — helping employees proactively reshape their careers to align with their skills, values, and personal goals. Using AI and NLP, it delivers personalized job matching, real-time career coaching, and CV optimization so that talent stops being wasted and potential stops being ignored.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1XbVpTv77omsW295ZbeZMrDoC6yQn45P5
+---
 
-## Run Locally
+## Requirements
 
-**Prerequisites:**  Node.js
+- Node.js v18+
+- A [Google Gemini API Key](https://aistudio.google.com/)
+- A Firebase project
 
+Create a `.env.local` file in the root:
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```env
+GEMINI_API_KEY=your_gemini_api_key
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+```
+
+---
+
+## Getting Started
+
+```bash
+git clone https://github.com/AounYoussef/JobCrafting.git
+cd JobCrafting
+npm install
+npm run dev
+```
+
+App runs at `http://localhost:5173`
