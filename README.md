@@ -1,4 +1,8 @@
-# 🧩 Job Crafting
+# Job Crafting
+
+<p align="center">
+  <img src="components/imgg/whitelogo.png" alt="Job Crafting Logo" width="120"/>
+</p>
 
 > Imagine waking up tomorrow excited to go to work. Not because you have to — but because everything about it was made for you. Your role matches your skills. Your company matches your values. Your team matches your energy.
 >
@@ -12,15 +16,12 @@ Job Crafting is an AI-powered platform built on organizational psychology — he
 
 - Node.js v18+
 - A [Google Gemini API Key](https://aistudio.google.com/)
-- A Firebase project
 
-Create a `.env.local` file in the root:
+Create a `.env` file in the root:
 
 ```env
+VITE_API_KEY=your_vite_api_key
 GEMINI_API_KEY=your_gemini_api_key
-VITE_FIREBASE_API_KEY=your_firebase_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=your_project_id
 ```
 
 ---
