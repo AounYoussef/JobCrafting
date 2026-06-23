@@ -1,8 +1,7 @@
 # Job Crafting
 
-<p align="center">
   <img src="components/imgg/whitelogo.png" alt="Job Crafting Logo" width="120"/>
-</p>
+
 
 > Imagine waking up tomorrow excited to go to work. Not because you have to — but because everything about it was made for you. Your role matches your skills. Your company matches your values. Your team matches your energy.
 >
