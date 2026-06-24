@@ -125,6 +125,19 @@ Our mission is simple:
 > Help every individual discover work that aligns with who they are, not just what they can do.
 
 ---
+## 📸 Screenshots
+
+### 🏠 Home
+![Home](README-assets/home.png)
+
+### 🔎 Job Finder
+![Job Finder](README-assets/job-finder.png)
+
+### 📄 CV Enhancer
+![CV Enhancer](README-assets/cv.png)
+
+### 🧠 Career Coach
+![Career Coach](README-assets/coach.png)
 
 ## 🤝 Contributing
 
