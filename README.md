@@ -127,23 +127,37 @@ Our mission is simple:
 ---
 ## 📸 Screenshots
 
+## 📸 Screenshots
+
 ### 🏠 Dashboard
-![Dashboard](README-assets/Dashboard.png)
+<p align="center">
+  <img src="README-assets/Dashboard.png" width="500"/>
+</p>
 
 ### 🔎 Job Finder
-![Job Finder](README-assets/Job_Finder.png)
+<p align="center">
+  <img src="README-assets/Job_Finder.png" width="500"/>
+</p>
 
 ### 📄 AI CV Studio
-![CV Studio](README-assets/AI_CV_Studio.png)
+<p align="center">
+  <img src="README-assets/AI_CV_Studio.png" width="500"/>
+</p>
 
 ### 🧠 Career Advisor
-![Career Advisor](README-assets/Career_Advisor_AI.png)
+<p align="center">
+  <img src="README-assets/Career_Advisor_AI.png" width="500"/>
+</p>
 
 ### 👤 Profile Settings
-![Profile Settings](README-assets/Profile_Settings.png)
+<p align="center">
+  <img src="README-assets/Profile_Settings.png" width="500"/>
+</p>
 
 ### 🔐 Login
-![Login](README-assets/Login.png)
+<p align="center">
+  <img src="README-assets/Login.png" width="500"/>
+</p>
 
 ---
 ## 🤝 Contributing
