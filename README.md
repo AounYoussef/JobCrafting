@@ -128,22 +128,22 @@ Our mission is simple:
 ## 📸 Screenshots
 
 ### 🏠 Dashboard
-![Dashboard](README.assets/Dashboard.png)
+![Dashboard](README-assets/Dashboard.png)
 
 ### 🔎 Job Finder
-![Job Finder](README.assets/Job_Finder.png)
+![Job Finder](README-assets/Job_Finder.png)
 
 ### 📄 AI CV Studio
-![CV Studio](README.assets/AI_CV_Studio.png)
+![CV Studio](README-assets/AI_CV_Studio.png)
 
 ### 🧠 Career Advisor
-![Career Advisor](README.assets/Career_Advisor_AI.png)
+![Career Advisor](README-assets/Career_Advisor_AI.png)
 
 ### 👤 Profile Settings
-![Profile Settings](README.assets/Profile_Settings.png)
+![Profile Settings](README-assets/Profile_Settings.png)
 
 ### 🔐 Login
-![Login](README.assets/Login.png)
+![Login](README-assets/Login.png)
 
 ---
 ## 🤝 Contributing
