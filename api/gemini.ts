@@ -12,7 +12,7 @@ export default async function handler(req: any, res: any) {
       case "chatMessage": {
         // params: { history: [{role, parts}], message: string, systemInstruction: string }
         const chat = getAi().chats.create({
-          model: "gemini-3.5-flash",
+          model: "gemini-2.5-flash",
           history: params.history || [],
           config: { systemInstruction: params.systemInstruction },
         });
@@ -22,7 +22,7 @@ export default async function handler(req: any, res: any) {
 
       case "enhanceCV": {
         const response = await getAi().models.generateContent({
-          model: "gemini-3.5-flash",
+          model: "gemini-2.5-flash",
           contents: `Optimize this CV for a ${params.targetJob} role. Highlight transferable skills using strong action verbs. Return clear Markdown:\n"${params.currentCV}"`,
         });
         return res.status(200).json({ text: response.text });
@@ -30,7 +30,7 @@ export default async function handler(req: any, res: any) {
 
       case "enhanceCVFromImage": {
         const response = await getAi().models.generateContent({
-          model: "gemini-3.5-flash",
+          model: "gemini-2.5-flash",
           contents: [
             { inlineData: { mimeType: params.mimeType, data: params.base64Image } },
             { text: `Extract, rewrite, and optimize this CV image for a ${params.targetJob} role. Deliver clean Markdown.` },
@@ -51,7 +51,7 @@ export default async function handler(req: any, res: any) {
 
       case "suggestJobs": {
         const response = await getAi().models.generateContent({
-          model: "gemini-3.5-flash",
+          model: "gemini-2.5-flash",
           contents: `Generate 8 realistic mock job listings matching query: "${params.query}" location: "${params.location || "Any"}". Freelance: ${!!params.isFreelance}, Remote Only: ${!!params.remoteOnly}.`,
           config: {
             responseMimeType: "application/json",
