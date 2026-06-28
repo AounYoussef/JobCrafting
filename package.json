@@ -16,10 +16,23 @@
     "firebase": "^12.6.0",
     "react-markdown": "^10.1.0"
   },
-  "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.2.0",
-    "typescript": "~5.8.2",
-    "vite": "^8.1.0"
+"devDependencies": {
+    "@types/node": "^22.13.1",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "globals": "^15.14.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.1.0"
+  },
+  "overrides": {
+    "protobufjs": "^7.4.0",
+    "@protobufjs/utf8": "^1.1.0",
+    "minimatch": "^9.0.5",
+    "brace-expansion": "^2.0.1",
+    "@grpc/grpc-js": "^1.10.10",
+    "ws": "^8.17.1",
+    "react-router": "^6.28.0",
+    "react-router-dom": "^6.28.0"
   }
 }
