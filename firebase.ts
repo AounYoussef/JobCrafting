@@ -4,7 +4,7 @@ import { initializeApp, getApps } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey =a,
+  apiKey = FIREBASE_API_KEY,
   authDomain: "job-crafting.firebaseapp.com",
   projectId: "job-crafting",
   storageBucket: "job-crafting.firebasestorage.app",
