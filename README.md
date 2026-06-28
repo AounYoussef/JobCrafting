@@ -84,9 +84,8 @@ https://console.firebase.google.com/
 Create a `.env` file in the project root:
 
 ```env
-VITE_API_KEY=your_vite_api_key
-GEMINI_API_KEY=your_gemini_api_key
-FIREBASE_API_KEY=your_firebase_api_key
+VITE_GEMINI_API_KEY=your_gemini_key_here
+VITE_FIREBASE_API_KEY=your_firebase_key_here
 ```
 
 ---
