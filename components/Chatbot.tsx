@@ -1,11 +1,15 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import { Chat } from '@google/genai';
-import { createCareerCounselorChat } from '../services/geminiService';
+import { sendChatMessage } from '../services/geminiService';
 import { ChatMessage } from '../types';
 
 interface ChatbotProps {
   onComplete: (targetJob: string) => void;
+}
+
+// Gemini-format history entry
+interface GeminiHistoryEntry {
+  role: 'user' | 'model';
+  parts: { text: string }[];
 }
 
 const Chatbot: React.FC<ChatbotProps> = ({ onComplete }) => {
@@ -13,29 +17,39 @@ const Chatbot: React.FC<ChatbotProps> = ({ onComplete }) => {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [targetJobInput, setTargetJobInput] = useState('');
-  const chatSessionRef = useRef<Chat | null>(null);
+  const historyRef = useRef<GeminiHistoryEntry[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Initialize chat
-    chatSessionRef.current = createCareerCounselorChat();
-    
-    // As per user instructions: "For the first message, introduce yourself."
-    // We trigger this by sending an initial prompt or just fetching the first turn.
+    // As per original behavior: kick off the conversation with an intro message.
     const initiateChat = async () => {
-      if (!chatSessionRef.current) return;
       setLoading(true);
       try {
-        const response = await chatSessionRef.current.sendMessage({ message: "Hello! Please introduce yourself as my AI career advisor." });
+        const initialUserMessage = "Hello! Please introduce yourself as my AI career advisor.";
+        const text = await sendChatMessage(historyRef.current, initialUserMessage);
+
+        // Record this exchange in history so future turns have context
+        historyRef.current = [
+          ...historyRef.current,
+          { role: 'user', parts: [{ text: initialUserMessage }] },
+          { role: 'model', parts: [{ text: text || '' }] },
+        ];
+
         const modelMsg: ChatMessage = {
           id: 'init',
           role: 'model',
-          text: response.text || "Hello! I'm your AI career advisor. I'm here to help you find your ideal path.",
+          text: text || "Hello! I'm your AI career advisor. I'm here to help you find your ideal path.",
           timestamp: Date.now()
         };
         setMessages([modelMsg]);
       } catch (error) {
         console.error("Failed to initialize chat:", error);
+        setMessages([{
+          id: 'init-error',
+          role: 'model',
+          text: "I'm having trouble connecting right now. Please try sending a message.",
+          timestamp: Date.now()
+        }]);
       } finally {
         setLoading(false);
       }
@@ -53,12 +67,13 @@ const Chatbot: React.FC<ChatbotProps> = ({ onComplete }) => {
   }, [messages]);
 
   const handleSend = async () => {
-    if (!input.trim() || !chatSessionRef.current || loading) return;
+    if (!input.trim() || loading) return;
 
+    const userText = input;
     const userMsg: ChatMessage = {
       id: Date.now().toString(),
       role: 'user',
-      text: input,
+      text: userText,
       timestamp: Date.now()
     };
 
@@ -67,11 +82,18 @@ const Chatbot: React.FC<ChatbotProps> = ({ onComplete }) => {
     setLoading(true);
 
     try {
-      const response = await chatSessionRef.current.sendMessage({ message: userMsg.text });
+      const text = await sendChatMessage(historyRef.current, userText);
+
+      historyRef.current = [
+        ...historyRef.current,
+        { role: 'user', parts: [{ text: userText }] },
+        { role: 'model', parts: [{ text: text || '' }] },
+      ];
+
       const modelMsg: ChatMessage = {
         id: (Date.now() + 1).toString(),
         role: 'model',
-        text: response.text || "I'm having trouble thinking right now. Can we try that again?",
+        text: text || "I'm having trouble thinking right now. Can we try that again?",
         timestamp: Date.now()
       };
       setMessages(prev => [...prev, modelMsg]);
