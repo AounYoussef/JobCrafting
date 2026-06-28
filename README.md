@@ -71,11 +71,12 @@ Built on principles of organizational psychology to promote:
 
 * Node.js v18+
 * Google Gemini API Key
+* FireBase API Key
 
-Get one here:
+Get them here:
 
 https://aistudio.google.com/
-
+https://console.firebase.google.com/
 ---
 
 ## ⚙️ Environment Variables
@@ -85,6 +86,7 @@ Create a `.env` file in the project root:
 ```env
 VITE_API_KEY=your_vite_api_key
 GEMINI_API_KEY=your_gemini_api_key
+FIREBASE_API_KEY=your_firebase_api_key
 ```
 
 ---
