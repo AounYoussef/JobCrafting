@@ -1,18 +1,21 @@
 {
   "name": "jobcrafting",
-  "private": true,
   "version": "0.0.0",
-  "homepage": "https://aounyoussef.github.io/JobCrafting",
+  "private": true,
   "type": "module",
-
+  "description": "AI-powered career alignment platform built with React, Vite, Firebase, and Google Gemini.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AounYoussef/JobCrafting"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-
   "dependencies": {
     "@google/genai": "^1.30.0",
     "firebase": "^12.6.0",
@@ -21,7 +24,6 @@
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.9.6"
   },
-
   "devDependencies": {
     "@types/node": "^22.13.1",
     "@types/react": "^19.0.8",
